@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Physical Therapy Clinic</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>My Physical Therapy Clinic</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#patients" onclick="showSection('patients')">Patients</a></li>
+                <li><a href="#appointments" onclick="showSection('appointments')">Appointments</a></li>
+                <li><a href="#exercise" onclick="showSection('exercise')">Exercise Plans</a></li>
+                <li><a href="#reports" onclick="showSection('reports')">Reports</a></li>
+                <li><a href="#settings" onclick="showSection('settings')">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="active">
+            <h2>Welcome to Your Digital Clinic</h2>
+            <p>This website is designed to help you manage your physical therapy clinic. You can add patient information, track their conditions, schedule appointments and manage exercise plans with ease.</p>
+            <p>Select one of the tabs above to get started.</p>
+        </section>
+
+        <section id="patients">
+            <h2>Patient Management</h2>
+            <!-- Card for adding a new patient -->
+            <div class="section-box">
+                <form id="patientForm" onsubmit="addPatient(event)">
+                    <div class="form-group">
+                        <label for="patientName">Patient Name:</label>
+                        <input type="text" id="patientName" required dir="auto">
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAge">Age:</label>
+                        <input type="number" id="patientAge" min="0" max="120" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientCondition">Condition / Diagnosis:</label>
+                        <input type="text" id="patientCondition" required dir="auto">
+                    </div>
+                    <div class="form-group">
+                        <label for="patientNotes">Additional Notes:</label>
+                        <textarea id="patientNotes" rows="3" dir="auto"></textarea>
+                    </div>
+                    <button type="submit">Add Patient</button>
+                </form>
+            </div>
+            <!-- Card for the patient list -->
+            <div class="section-box">
+                <h3>Patient List</h3>
+                <table id="patientTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Condition</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Patients will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="appointments">
+            <h2>Appointment Management</h2>
+            <!-- Card for adding an appointment -->
+            <div class="section-box">
+                <form id="appointmentForm" onsubmit="addAppointment(event)">
+                    <div class="form-group">
+                        <label for="appointmentPatient">Patient Name:</label>
+                        <input type="text" id="appointmentPatient" required dir="auto">
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDate">Date &amp; Time:</label>
+                        <input type="datetime-local" id="appointmentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentNotes">Notes:</label>
+                        <textarea id="appointmentNotes" rows="2" dir="auto"></textarea>
+                    </div>
+                    <button type="submit">Add Appointment</button>
+                </form>
+            </div>
+            <!-- Card for appointment list -->
+            <div class="section-box">
+                <h3>Appointment List</h3>
+                <table id="appointmentTable">
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Date &amp; Time</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Appointments will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="exercise">
+            <h2>Exercise Plans and Treatments</h2>
+            <p>You can add an exercise plan for each patient. This is a preliminary feature, and you will need advanced development to make the plans dynamic and trackable.</p>
+            <!-- Card for adding exercise plan -->
+            <div class="section-box">
+                <form id="exerciseForm" onsubmit="addExercisePlan(event)">
+                    <div class="form-group">
+                        <label for="exercisePatient">Patient Name:</label>
+                        <input type="text" id="exercisePatient" required dir="auto">
+                    </div>
+                    <div class="form-group">
+                        <label for="exercisePlan">Exercise Plan:</label>
+                        <textarea id="exercisePlan" rows="3" required dir="auto"></textarea>
+                    </div>
+                    <button type="submit">Add Plan</button>
+                </form>
+            </div>
+            <!-- Card for exercise plan list -->
+            <div class="section-box">
+                <h3>Exercise Plan Lists</h3>
+                <ul id="exerciseList">
+                    <!-- Exercise plans will be added here -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="reports">
+            <h2>Reports and Statistics</h2>
+            <p>Currently, this section displays basic statistics about the number of patients, appointments and exercise plans. For more analytics, you should use database systems and integrate with analysis tools.</p>
+            <div class="report-cards">
+                <div class="card" id="patientCount">Patients: 0</div>
+                <div class="card" id="appointmentCount">Appointments: 0</div>
+                <div class="card" id="exerciseCount">Exercise Plans: 0</div>
+            </div>
+        </section>
+
+        <section id="settings">
+            <h2>Settings</h2>
+            <p>This space is for customizing the website; later you can add options such as language selection, notification settings, or linking the site to external systems.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Physical Therapy Clinic. All rights reserved.</p>
+    </footer>
+</body>
+</html>
