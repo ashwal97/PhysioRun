@@ -1,0 +1,165 @@
+/* My Physical Therapy Clinic - Modern and Responsive Design */
+:root {
+  --primary-color: #4b8bbe;
+  --secondary-color: #fff;
+  --background-color: #f8fafc;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --border-radius: 8px;
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Header and navigation */
+header {
+  background: linear-gradient(135deg, #4b8bbe, #5fa7d3);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 { margin: 0; font-size: 1.8em; }
+
+nav ul {
+  list-style: none;
+  margin: 15px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 8px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover { background-color: rgba(255, 255, 255, 0.25); }
+
+/* Main container */
+main { padding: 20px; }
+
+/* Section styling */
+section { display: none; }
+
+section.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form and table cards */
+.section-box {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+}
+
+label { display: block; font-weight: 600; margin-bottom: 5px; }
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover { background-color: #3978a8; }
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f4f8;
+  font-weight: 600;
+}
+
+/* Report cards */
+.report-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.report-cards .card {
+  flex: 1 1 240px;
+  background-color: var(--card-bg);
+  padding: 15px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #4b8bbe;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav li {
+    margin: 4px 0;
+  }
+  .section-box {
+    margin: 15px 10px;
+    padding: 15px;
+  }
+  th, td {
+    padding: 8px;
+  }
+}
